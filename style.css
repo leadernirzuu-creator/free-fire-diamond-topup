@@ -1,0 +1,457 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+}
+
+.header {
+    background: linear-gradient(135deg, #d4522e 0%, #8b0000 100%);
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.whatsapp-btn {
+    display: flex;
+    gap: 10px;
+}
+
+.whatsapp-live {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #25D366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-live:hover {
+    background: #20BA5A;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(37, 211, 102, 0.5);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+}
+
+.package-card {
+    background: linear-gradient(135deg, #2d3561 0%, #1a1f3a 100%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #d4522e;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(212, 82, 46, 0.4);
+}
+
+.package-header {
+    background: linear-gradient(135deg, #d4522e 0%, #8b0000 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.package-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.package-header p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.package-content {
+    margin-bottom: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #d4522e;
+    font-size: 0.85rem;
+}
+
+.info-value {
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.card-details {
+    background: linear-gradient(135deg, #b8860b 0%, #8b6914 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-number {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.card-details-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.card-detail-item {
+    flex: 1;
+    padding: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.card-detail-item label {
+    display: block;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-bottom: 3px;
+}
+
+.card-detail-item span {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(124, 58, 237, 0.3);
+}
+
+.buy-button:hover {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+    box-shadow: 0 6px 12px rgba(124, 58, 237, 0.5);
+    transform: scale(1.02);
+}
+
+.buy-button:active {
+    transform: scale(0.98);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2d3561 0%, #1a1f3a 100%);
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid #d4522e;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: #d4522e;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #d4522e;
+}
+
+.payment-info {
+    margin-top: 20px;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #1e5a3f 0%, #0f3e28 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #25D366;
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+    color: #25D366;
+}
+
+.info-box p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.info-box span {
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+.copy-btn {
+    width: 100%;
+    padding: 10px;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: #20BA5A;
+    transform: scale(1.02);
+}
+
+.steps {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.steps h3 {
+    margin-bottom: 10px;
+    color: #d4522e;
+}
+
+.steps ol {
+    margin-left: 20px;
+}
+
+.steps li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.transaction-input {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f2340 100%);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #7c3aed;
+}
+
+.transaction-input label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #7c3aed;
+}
+
+.transaction-input input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #7c3aed;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+.transaction-input input:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.verify-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.verify-btn:hover {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    transform: scale(1.02);
+}
+
+#verificationMessage {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+#verificationMessage.success {
+    display: block;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    animation: slideIn 0.5s ease;
+}
+
+#verificationMessage.error {
+    display: block;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 2px solid #d4522e;
+}
+
+.footer p {
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-details-row {
+        flex-direction: column;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+}
